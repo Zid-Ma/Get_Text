@@ -1,0 +1,99 @@
+﻿<Window x:Class="Get_Text.ScreenShoot"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Get_Text"
+        mc:Ignorable="d"
+        Title="ScreenShoot" WindowStyle="None" OpacityMask="Black" KeyDown="Window_KeyDown" MouseDown="Window_MouseDown" Foreground="Black" Background="#33FFFFFF" WindowState="Maximized" AllowsTransparency="True" Topmost="True" Width="400" Height="400" Closed="Window_Closed">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#66000000" Offset="1"/>
+                <GradientStop Color="White" Offset="0.94"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Image x:Name="image" OpacityMask="Black" Source="/临时图像.png" Stretch="Fill" Height="400" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"/>
+        <Border BorderBrush="#66000000" BorderThickness="1" Visibility="Hidden">
+            <Border.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#0C000000" Offset="1"/>
+                    <GradientStop Color="Transparent" Offset="0"/>
+                </RadialGradientBrush>
+            </Border.Background>
+        </Border>
+        <Button x:Name="Button_Box" Content="Button" Margin="153,170,121,176" Background="#FFDDDDDD" Padding="0,0,0,0" Click="Button_Box_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1,1,1,1" Visibility="Hidden">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Image x:Name="ImageShoot" HorizontalAlignment="Left" Height="30" Margin="138,255,0,0" VerticalAlignment="Top" Width="30" Source="/准星.png"/>
+        <Image x:Name="ImageShoot2" HorizontalAlignment="Left" Height="30" Margin="138,308,0,0" VerticalAlignment="Top" Width="30" Source="/准星.png"/>
+        <Border x:Name="Border_Box" BorderThickness="1" Width="20" Height="20" Margin="216,110,164,270">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#99FF0000"/>
+                    <GradientStop Color="#99FF0000" Offset="1"/>
+                    <GradientStop Color="#99FF9800" Offset="0.113"/>
+                    <GradientStop Color="#99E5FE00" Offset="0.223"/>
+                    <GradientStop Color="#9932EA00" Offset="0.34"/>
+                    <GradientStop Color="#9900B73D" Offset="0.457"/>
+                    <GradientStop Color="#992D8389" Offset="0.577"/>
+                    <GradientStop Color="#995C5C6B" Offset="0.687"/>
+                    <GradientStop Color="#997835A0" Offset="0.803"/>
+                    <GradientStop Color="#99D311BA" Offset="0.903"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+        </Border>
+        <Label x:Name="Label_Shoot" Content="Label" HorizontalAlignment="Left" Margin="241,110,0,0" VerticalAlignment="Top" Foreground="#99000000">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#4CFF5050" Offset="0"/>
+                    <GradientStop Color="#1900CAFF" Offset="0.413"/>
+                    <GradientStop Color="#0045FF04" Offset="1"/>
+                    <GradientStop Color="#3357FF0C" Offset="0.197"/>
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox x:Name="TextBox_Shoot" HorizontalAlignment="Left" Margin="96,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="16" Background="#66FFFFFF" Foreground="#CC505050" KeyDown="TextBox_Shoot_KeyDown">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF597B21"/>
+                    <GradientStop Color="#FF3C5CAB" Offset="1"/>
+                    <GradientStop Color="#FF1E2B94" Offset="0.36"/>
+                    <GradientStop Color="#FF5C3CB9" Offset="0.717"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="Button_ShootSubmit" Content="确认" HorizontalAlignment="Left" Margin="286,170,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="Button_ShootSubmit_Click" IsVisibleChanged="Button_ShootSubmit_IsVisibleChanged" Background="White" Foreground="#FF505050">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5516E4"/>
+                    <GradientStop Color="#FF7F5BD0" Offset="1"/>
+                    <GradientStop Color="#FF871888" Offset="0.37"/>
+                    <GradientStop Color="#FFB34040" Offset="0.747"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="30,217,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Button x:Name="Button_Cancle" Content="取消" HorizontalAlignment="Left" Margin="251,170,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="Button_Cancle_Click" Background="White" Foreground="#FF505050">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1EBDDC"/>
+                    <GradientStop Color="#FF2C70AF" Offset="1"/>
+                    <GradientStop Color="#FF2CB14D" Offset="0.323"/>
+                    <GradientStop Color="#FFAF00D8" Offset="0.737"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="50,285,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="ScreenShoot_Active" Content="ScreenShoot_Active" HorizontalAlignment="Left" Margin="261,298,0,0" VerticalAlignment="Top" IsVisibleChanged="ScreenShoot_Active_IsVisibleChanged" Foreground="#00000000"/>
+        <Label x:Name="ScreenLinShi_Active" Content="ScreenLinShi_Active" HorizontalAlignment="Left" Margin="261,328,0,0" VerticalAlignment="Top" IsVisibleChanged="ScreenLinShi_Active_IsVisibleChanged" Foreground="#00000000"/>
+
+    </Grid>
+</Window>

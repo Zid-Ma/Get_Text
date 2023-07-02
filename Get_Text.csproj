@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CS\**" />
+    <Compile Remove="Form\**" />
+    <EmbeddedResource Remove="CS\**" />
+    <EmbeddedResource Remove="Form\**" />
+    <None Remove="CS\**" />
+    <None Remove="Form\**" />
+    <Page Remove="CS\**" />
+    <Page Remove="Form\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MMMiddle1.png" />
+    <None Remove="临时图像.png" />
+    <None Remove="准星.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord" Version="3.8.0" />
+    <PackageReference Include="Accord.Audio" Version="3.8.0" />
+    <PackageReference Include="Accord.Audition" Version="3.8.0" />
+    <PackageReference Include="Accord.DirectSound" Version="3.8.0" />
+    <PackageReference Include="Accord.Imaging" Version="3.8.0" />
+    <PackageReference Include="Accord.IO" Version="3.8.0" />
+    <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
+    <PackageReference Include="Accord.Math" Version="3.8.0" />
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+    <PackageReference Include="Accord.Video" Version="3.8.0" />
+    <PackageReference Include="Analytics" Version="3.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="MMMiddle1.png" />
+    <Resource Include="临时图像.png" />
+    <Resource Include="准星.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Code\OutwardOrgans\Eye\" />
+    <Folder Include="Code\OutwardOrgans\Ear\" />
+    <Folder Include="Code\Sense\Smell\" />
+    <Folder Include="Code\Sense\Gustation\" />
+  </ItemGroup>
+
+</Project>
